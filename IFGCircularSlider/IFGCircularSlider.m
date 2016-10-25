@@ -170,6 +170,7 @@ static const CGFloat kFitFrameRadius = -1.0;
 - (void)setAngleFromNorth:(CGFloat)angleFromNorth {
     _angleFromNorth = angleFromNorth;
     NSAssert(_angleFromNorth >= 0, @"_angleFromNorth %.2f must be greater than or equal to 0", angleFromNorth);
+    [self setNeedsDisplay]; // Need to redraw with new angle
 }
 
 - (void)setRadius:(CGFloat)radius {
